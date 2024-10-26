@@ -1,0 +1,183 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fnil\fcharset136 PingFangHK-Semibold;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 #
+\f1 \'a4\'75\'a7\'40\'ac\'79\'a1\'47\'a5\'fd\uc0\u21019 \'ab\'d8\'b7\'73\'a5\'d8\u24405 \'a1\'41\'a6\'41\u21019 \'ab\'d8\'a4\'40\u20010 \'aa\'c5\'a4\'e5\'a5\'f3\'a1\'41\'b3\'cc\'a6\'5a\'a6\'62\'aa\'c5\'a4\'e5\'a5\'f3\'a4\'a4\u20889 \'a4\'4a\u20869 \'ae\'65\'a1\'43
+\f0 \
+#
+\f1 \uc0\u22768 \'a9\'fa
+\f0 task create_workdir
+\f1 \'a9\'d2\'bb\'dd\'aa\'ba\uc0\u21442 \u25968 
+\f0 workdir_path\
+#call task create_workdir:
+\f1 \uc0\u20256 \'a4\'4a
+\f0 task create_workdir
+\f1 \'a9\'d2\'bb\'dd\uc0\u21442 \u25968 
+\f0 workdir\
+#call task create_file:
+\f1 \uc0\u20256 \'a4\'4a
+\f0 task create_file
+\f1 \'a9\'d2\'bb\'dd\uc0\u21442 \u25968 
+\f0 filedir
+\f1 \'a1\'41\uc0\u20869 \'ae\'65\u20026 
+\f0 task create_workdir
+\f1 \'aa\'ba\uc0\u36755 \'a5\'58
+\f0 work_path\
+#call task write_file
+\f1 \'a1\'47\uc0\u20256 \'a4\'4a
+\f0 task write_file
+\f1 \'a9\'d2\'bb\'dd\uc0\u21442 \u25968 
+\f0 workdir
+\f1 \'a9\'4d
+\f0 filepath
+\f1 \'a1\'41\'a8\'e4\'a4\'a4
+\f0 filepath
+\f1 \uc0\u20869 \'ae\'65\u20026 
+\f0 task create_file
+\f1 \'aa\'ba\uc0\u36755 \'a5\'58
+\f0 file_path\
+\
+workflow myWorkflow \{\
+    String workdir_path\
+\
+    call create_workdir \{\
+        input:\
+            workdir = workdir_path\
+    \}\
+\
+    call create_file \{\
+        input:\
+            filedir = create_workdir.work_path\
+    \}\
+\
+    call write_file \{\
+        input:\
+            workdir = workdir_path,\
+            filepath = create_file.file_path\
+    \}\
+\}\
+\
+#
+\f1 \uc0\u21019 \'ab\'d8\'a5\'d8\u24405 \'a1\'41\'a6\'7d\'a6\'62\'a5\'d8\u24405 \u21019 \'ab\'d8\'a5\'4e\'aa\'ed\'be\'de\'a7\'40\'a7\'b9\'a6\'a8\'aa\'ba
+\f0 workdir.SUCCESS
+\f1 \'a4\'e5\'a5\'f3\'a1\'41\'ad\'59\'a5\'d8\uc0\u24405 \'a4\'77\'a6\'73\'a6\'62\'a1\'41\'a5\'75\u21019 \'ab\'d8
+\f0 workdir.EXIST
+\f1 \'a4\'e5\'a5\'f3\'a1\'43
+\f0 \
+#
+\f1 \uc0\u36755 \'a4\'4a\'a1\'47\'ab\'dd\u21019 \'ab\'d8\'a5\'d8\u24405 \'b8\'f4\u24452 
+\f0 \
+#
+\f1 \uc0\u36755 \'a5\'58\'a1\'47\u21019 \'ab\'d8\'aa\'ba\'a5\'d8\u24405 \'b8\'f4\u24452 \'a1\'5d\u36755 \'a4\'4a\'a1\'42\u36755 \'a5\'58\u20869 \'ae\'65\'a8\'e4\u23454 \'a7\'b9\'a5\'fe\'ac\'db\'a6\'50\'a1\'5e
+\f0 \
+\
+#
+\f1 \uc0\u22768 \'a9\'fa\'a1\'47\u21464 \'b6\'71
+\f0 workdir
+\f1 \uc0\u31867 \'ab\'ac\u20026 \'a6\'72\'b2\'c5\'a6\'ea
+\f0 \
+#command
+\f1 \'a1\'47\'a5\'69\uc0\u25191 \'a6\'e6\'aa\'ba
+\f0 shell
+\f1 \'a5\'4e\uc0\u30721 \'a1\'41\'a5\'69\'a5\'ce
+\f0 \{\}
+\f1 \'a9\'ce
+\f0 <<<>>>
+\f1 \'ac\'41\'b0\'5f\'a1\'41\'ab\'d8\uc0\u35758 \'a5\'ce
+\f0 <<<>>>
+\f1 \'a1\'41\uc0\u21306 \'a4\'c0\'a4\'5f\'a5\'4e\u30721 \'a8\'e4\'a5\'4c\'b3\'a1\'a4\'c0\'a1\'41\'b4\'a3\'b0\'aa\'a5\'69\u35835 \'a9\'ca
+\f0 \
+#output
+\f1 \'a1\'47\uc0\u22768 \'a9\'fa\'a6\'7d\u36171 \'ad\'c8\'a6\'5a\'a1\'41\'a5\'69\'a7\'40\u20026 \'a8\'e4\'a5\'4c
+\f0 task
+\f1 \'aa\'ba\uc0\u36755 \'a4\'4a
+\f0 \
+task create_workdir \{\
+    String workdir\
+    command <<<\
+        if [ ! -d $\{workdir\} ]; then\
+            mkdir $\{workdir\}\
+            touch $\{workdir\}/workdir.SUCCESS\
+        else\
+            touch $\{workdir\}/workdir.EXIST\
+        fi\
+    >>>\
+    output \{\
+        String work_path = "$\{workdir\}"\
+    \}\
+\}\
+\
+#
+\f1 \uc0\u21019 \'ab\'d8\'aa\'c5\'a4\'e5\'a5\'f3\'a1\'41\'a6\'7d\'a6\'62\'a4\'e5\'a5\'f3\'a9\'d2\'a6\'62\'a5\'d8\u24405 \u21019 \'ab\'d8\'a5\'4e\'aa\'ed\'be\'de\'a7\'40\'a7\'b9\'a6\'a8\'aa\'ba
+\f0 file.SUCCESS
+\f1 \'a4\'e5\'a5\'f3\'a1\'41\'ad\'59\'a4\'e5\'a5\'f3\'a4\'77\'a6\'73\'a6\'62\'a1\'41\uc0\u36755 \'a5\'58\u35821 \'a5\'79
+\f0 \'93File exist!\'94
+\f1 \'a1\'41\'a6\'7d\uc0\u21019 \'ab\'d8
+\f0 file.EXIST
+\f1 \'a4\'e5\'a5\'f3
+\f0 \
+#
+\f1 \uc0\u36755 \'a4\'4a\'a1\'47\'a4\'e5\'a5\'f3\'a9\'d2\'a6\'62\'a5\'d8\u24405 \'a1\'5d\'a7\'59
+\f0 task create_workdir
+\f1 \'aa\'ba\uc0\u36755 \'a5\'58\'a5\'d8\u24405 \'a1\'5e\'a1\'41\'a4\'e5\'a5\'f3\'b8\'f4\u24452 \'a1\'5d\'a4\'e5\'a5\'f3\'a9\'d2\'a6\'62\'a5\'d8\u24405 
+\f0 +
+\f1 \'a4\'e5\'a5\'f3\'a6\'57
+\f0 )\
+#
+\f1 \uc0\u36755 \'a5\'58\'a1\'47\'a4\'e5\'a5\'f3\'b8\'f4\u24452 
+\f0 \
+task create_file \{\
+    String filedir\
+    String filename = filedir + "/test1.txt"\
+    command <<<\
+        if [ ! -f $\{filename\} ]; then\
+            touch $\{filename\}\
+            touch $\{filedir\}/file.SUCCESS\
+        else\
+            echo "File exist!"\
+            touch $\{filedir\}/file.EXIST\
+        fi\
+    >>>\
+    output \{\
+        String file_path = "$\{filename\}"\
+    \}\
+\}\
+\
+#
+\f1 \'a6\'56\'a4\'e5\'a5\'f3\'a4\'a4\uc0\u20889 \'a4\'4a\u20869 \'ae\'65\'a1\'41\'a6\'7d\'a6\'62\'a4\'e5\'a5\'f3\'a9\'d2\'a6\'62\'a5\'d8\u24405 \u21019 \'ab\'d8\'a5\'4e\'aa\'ed\'be\'de\'a7\'40\'a7\'b9\'a6\'a8\'aa\'ba
+\f0 write.SUCCESS
+\f1 \'a4\'e5\'a5\'f3\'a1\'41\'ad\'59\'a4\'e5\'a5\'f3\'a4\'a3\'a6\'73\'a6\'62\'a1\'41\uc0\u36755 \'a5\'58\u35821 \'a5\'79
+\f0 \'93File not exist!\'94
+\f1 \'a1\'41\'a6\'7d\uc0\u21019 \'ab\'d8
+\f0 write.FAIL
+\f1 \'a4\'e5\'a5\'f3
+\f0 \
+#
+\f1 \uc0\u36755 \'a4\'4a\'a1\'47\'a4\'e5\'a5\'f3\'b8\'f4\u24452 
+\f0 \
+#
+\f1 \uc0\u36755 \'a5\'58\'a1\'47\'a4\'e5\'a5\'f3\u20869 \'ae\'65
+\f0 \
+task write_file \{\
+    String workdir\
+    String filepath\
+    String file_content = "Tomorrow is another day."\
+    command <<<\
+        if [ -f $\{filepath\} ]; then\
+            echo "$\{file_content\}" >$\{filepath\}\
+            touch $\{workdir\}/write.SUCCESS\
+        else\
+            echo "File not exist!"\
+            touch $\{workdir\}/write.FAIL\
+        fi  \
+    >>>\
+    output \{\
+        String file_txt = "$\{file_content\}"\
+    \}\
+\}\
+\
+}
